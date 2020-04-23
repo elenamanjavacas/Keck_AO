@@ -1,4 +1,5 @@
 import os.path
+import numpy as np
 
 # function to read dm origin files
 # Marcos van Dam
