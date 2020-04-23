@@ -1,6 +1,10 @@
 # Function to read the interaction matrix
 # Rewritten for the NGWFC
 # Marcos van Dam, April 2006
+# Elena Manjavacas April 2020
+
+import numpy as np
+import os.path
 
 def readimx(filename):
     H = np.zeros((349,608))
