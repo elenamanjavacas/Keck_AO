@@ -3,6 +3,7 @@ import numpy as np
 
 # function to read dm origin files
 # Marcos van Dam
+# Elena Manjavacas April 2020
 
 def readdm(filename):
     dmorigin = np.zeros(349)
