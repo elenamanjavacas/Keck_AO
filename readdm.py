@@ -1,9 +1,10 @@
-import os.path
-import numpy as np
-
 # function to read dm origin files
 # Marcos van Dam
-# Elena Manjavacas April 2020
+# Elena Manjavacas, April 2020
+
+import numpy as np
+import os.path
+from astropy.io import ascii
 
 
 def readdm(filename):
@@ -21,14 +22,15 @@ def readdm(filename):
             print('File '+filename+' not found, returning')
         else:
             fname = tmp0
-            dmorigin = np.loadtxt(fname)
-            np.savetxt(fname, dmorigin)
+            dmorigin =  np.fromfile(fname, dtype='f', offset=0)
             print(dmorigin)
+            np.savetxt('new_'+fname, dmorigin)
             print('File written in path '+cddm)
             
     else: 
         fname = tmp0
-        dmorigin = np.loadtxt(fname)
-        np.savetxt(fname, dmorigin)
+        dmorigin =  np.fromfile(fname, dtype='f', offset=0)
         print(dmorigin)
+        np.savetxt('new_'+fname, dmorigin) ## I save the file with a slighly different name, so it doesn't overwritte the previous one.
         print('File written')
+        print(np.shape(dmorigin))
