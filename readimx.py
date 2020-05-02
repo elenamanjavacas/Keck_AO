@@ -6,8 +6,8 @@
 import numpy as np
 import os.path
 
+
 def readimx(filename):
-    H = np.zeros((349,608))
     path2imx='/kroot/rel/ao/qfix/data/ControlParms/SystemMatrix/'
     
     tmp0 = filename
@@ -22,11 +22,13 @@ def readimx(filename):
             print('File '+filename+' not found, returning')
         else:
             fname = tmp0
-            H = np.loadtxt(fname)
+            H =  np.fromfile(fname, dtype='f', offset=0).reshape((349,608))
+            print(H,np.shape(H))
             np.savetxt(fname, H)
-            print('File written in path '+ path2imx)
+            print('File '+ 'new_'+fname +' written in path '+path2imx)
     else: 
         fname = tmp0
-        H = np.loadtxt(fname)
-        np.savetxt(fname, H)
-        print('File '+ filename +' written')
+        H =  np.fromfile(fname, dtype='f', offset=0).reshape((349,608))
+        print(H,np.shape(H))
+        np.savetxt('new_'+fname, H)
+        print('File '+ 'new_'+fname +' written')
