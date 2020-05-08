@@ -32,9 +32,6 @@ def readph(filename):
         fname = tmp0
         phase = open(fname,'r').read()
         phase = np.array(phase.replace("\n", "").split()).astype(float)
-        
-        #print(phase)
         plt.plot(phase)
-        #np.savetxt('new'+fname, phase)
         print('File '+ filename +' written')
         return phase
