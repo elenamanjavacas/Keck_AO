@@ -20,17 +20,17 @@ def readdm(filename):
         
         if tmp == False:
             print('File '+filename+' not found, returning')
+            return dmorigin
         else:
             fname = tmp0
             dmorigin =  np.fromfile(fname, dtype='f', offset=0)
             print(dmorigin)
-            np.savetxt('new_'+fname, dmorigin)
+            np.savetxt(fname, dmorigin)
             print('File written in path '+cddm)
-            
+            return dmorigin
     else: 
         fname = tmp0
-        dmorigin =  np.fromfile(fname, dtype='f', offset=0)
-        print(dmorigin)
-        np.savetxt('new_'+fname, dmorigin) ## I save the file with a slighly different name, so it doesn't overwritte the previous one.
+        dmorigin =  np.fromfile(fname, dtype='f', offset=1)
+        np.savetxt('new'+fname, dmorigin)
         print('File written')
-        print(np.shape(dmorigin))
+        return dmorigin
