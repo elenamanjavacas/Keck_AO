@@ -1,3 +1,7 @@
+import numpy as np
+import os.path
+import matplotlib.pyplot as plt
+
 # To run writedm include the file name as first input, and the path to the dm file as second input. 
 # If the dm file is in the current directory, then include write ''.
 
