@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
-
-
 import numpy as np
 import os.path
 import matplotlib.pyplot as plt
 from epics import caget, caput
 import time
-
-
-# In[6]:
 
 
 # load a background file into the WFC
@@ -41,4 +35,3 @@ def loadcog(filename):
             print('bkgndlderr')
             return bkgndlderr
         
-
